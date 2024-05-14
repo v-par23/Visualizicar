@@ -4,9 +4,9 @@ static class Model {
   ArrayList<Model> contents = new ArrayList<Model>();
   
   void draw(Mat parent) {
-  world.mult(parent, local);
-  for (Model model : contents) {
-    model.draw(world);
+  this.world.mult(parent, this.local);
+  for (Model model : this.contents) {
+    model.draw(this.world);
   }
 }
 

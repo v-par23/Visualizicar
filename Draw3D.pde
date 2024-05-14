@@ -7,7 +7,7 @@ Comparator<Triangle2D> compare = new Comparator<Triangle2D>(){
     return Float.compare(b.dist, a.dist);
   }
 };
-void parse(Model world, byte[] stl) {
+void parseSTL(Model world, byte[] stl) {
   int i = 0;
   for(int i2 = 0; i2 < 80; i2++) { stl_header[i2] = stl[i++]; }
   int stl_size = 0;
@@ -18,14 +18,14 @@ void parse(Model world, byte[] stl) {
     Triangle triangle = new Triangle();
     world.contents.add(triangle);
     for(int i3 = 0; i3 < 4; i3++) {
-      triangle.data.cols[i3][0] = 1;
+      triangle.local.cols[i3][0] = 1;
       for(int i4 = 1; i4 < 4; i4++) {
         int temp = 0;
         for(int i5 = 0; i5 < 32; i5 += 8) { temp |= (stl[i++] & 0xFF) << i5; }
-        triangle.data.cols[i3][i4] = Float.intBitsToFloat(temp);
+        triangle.local.cols[i3][i4] = Float.intBitsToFloat(temp);
       }
     }
-    triangle.data.cols[0][0] = 0;
+    triangle.local.cols[0][0] = 0;
     for(int i3 = 0; i3 < 16; i3 += 8) { triangle.mat |= (stl[i++] & 0xFF) << i3; }
   }
 }
