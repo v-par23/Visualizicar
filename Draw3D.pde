@@ -1,14 +1,13 @@
 import java.util.*;
 import java.util.function.*;
 byte[] stl_header = new byte[80]; // byte[80]
-Model world = new Model();
 ArrayList<Triangle2D> triangles = new ArrayList<Triangle2D>();
 Comparator<Triangle2D> compare = new Comparator<Triangle2D>(){
   int compare(Triangle2D a, Triangle2D b){
     return Float.compare(b.dist, a.dist);
   }
 };
-void parse(byte[] stl) {
+void parse(Model world, byte[] stl) {
   int i = 0;
   for(int i2 = 0; i2 < 80; i2++) { stl_header[i2] = stl[i++]; }
   int stl_size = 0;
@@ -30,7 +29,7 @@ void parse(byte[] stl) {
     for(int i3 = 0; i3 < 16; i3 += 8) { triangle.mat |= (stl[i++] & 0xFF) << i3; }
   }
 }
-void draw3D(int frameCount) {
+void draw3D(Model world, int frameCount) {
   Mat m0 = new Mat().rotz(0.01*frameCount);//HALF_PI
   Mat m1 = new Mat().rotx(0.1 * sin(0.02*frameCount)+HALF_PI);
   Mat camMatrix = new Mat().mult(m0, m1);

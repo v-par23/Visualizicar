@@ -19,26 +19,22 @@ synchronized public void win_draw3(PApplet appc, GWinData data) { //_CODE_:windo
 } //_CODE_:window1:787593:
 
 public void carButtonClicked(GButton source, GEvent event) { //_CODE_:carButt:291113:
-  selectedCar = "low_poly_car.stl";
-  parse(loadBytes(selectedCar));
+  selectedCar = low_poly_car;
   println("carButt - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:carButt:291113:
 
 public void hbButtClicked(GButton source, GEvent event) { //_CODE_:hbButt:972748:
-  selectedCar = "sti_hb_all.stl";
-  parse(loadBytes(selectedCar));
+  selectedCar = sti_hb_all;
   println("hbButt - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:hbButt:972748:
 
 public void suvButtonClicked(GButton source, GEvent event) { //_CODE_:suvButt:760531:
-  selectedCar = "suv2.stl";
-  parse(loadBytes(selectedCar));
+  selectedCar = suv2;
   println("suvButt - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:suvButt:760531:
 
 public void truckButtonClicked(GButton source, GEvent event) { //_CODE_:truckButt:895158:
-  selectedCar = "Pickup_truck.stl";
-  parse(loadBytes(selectedCar));
+  selectedCar = Pickup_truck;
   println("truckButt - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:truckButt:895158:
 
