@@ -4,9 +4,11 @@ static class Model {
   ArrayList<Model> contents = new ArrayList<Model>();
   
   void draw(Mat parent) {
-    world.mult(parent, local);
-    for(Model model : contents) {
-      model.draw(world);
-    }
+  world.mult(parent, local);
+  ArrayList<Model> copyContents = new ArrayList<>(contents); // Create a copy
+  for (Model model : copyContents) { // Iterate over the copy
+    model.draw(world);
   }
+}
+
 }
