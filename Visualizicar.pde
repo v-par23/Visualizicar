@@ -1,7 +1,7 @@
 void setup() {
   size(512, 512);
   frameRate(30);
-  parse(loadBytes("low_poly_car.stl"));
+  parse(loadBytes("truck2.stl"));
   //saveBytes("car.stl", stl);
 }
 void draw() {
