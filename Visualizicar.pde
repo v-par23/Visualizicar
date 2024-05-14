@@ -1,9 +1,21 @@
+import g4p_controls.*;
+  String selectedCar = " ";
+  
 void setup() {
-  size(512, 512);
+  size(1000, 1000);
   frameRate(30);
-  parse(loadBytes("truck2.stl"));
+  
+  //default car
+  selectedCar = "low_poly_car.stl";
+   parse(loadBytes(selectedCar));
+
   //saveBytes("car.stl", stl);
+  
+  createGUI();
 }
+
+  
+
 void draw() {
   println(frameRate);
   background(0);
