@@ -26,4 +26,5 @@ void draw() {
   noStroke();
   translate(width/2,height/2);
   draw3D(selectedCar, frameCount);
+  translate(-width/2,-height/2);
 }
