@@ -19,37 +19,28 @@ synchronized public void win_draw3(PApplet appc, GWinData data) { //_CODE_:windo
 } //_CODE_:window1:787593:
 
 public void carButtonClicked(GButton source, GEvent event) { //_CODE_:carButt:291113:
-  selectedCar = low_poly_car;
+  selectedCar = "low_poly_car.stl";
+  parse(loadBytes(selectedCar));
   println("carButt - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:carButt:291113:
 
 public void hbButtClicked(GButton source, GEvent event) { //_CODE_:hbButt:972748:
-  selectedCar = sti_hb_all;
+  selectedCar = "sti_hb_all.stl";
+  parse(loadBytes(selectedCar));
   println("hbButt - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:hbButt:972748:
 
 public void suvButtonClicked(GButton source, GEvent event) { //_CODE_:suvButt:760531:
-  selectedCar = suv2;
+  selectedCar = "suv2.stl";
+  parse(loadBytes(selectedCar));
   println("suvButt - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:suvButt:760531:
 
 public void truckButtonClicked(GButton source, GEvent event) { //_CODE_:truckButt:895158:
-  selectedCar = Pickup_truck;
+  selectedCar = "Pickup_truck.stl";
+  parse(loadBytes(selectedCar));
   println("truckButt - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:truckButt:895158:
-
-public void textfield2_change1(GTextField source, GEvent event) { //_CODE_:textfield2:334272:
-  println("textfield1 - GTextField >> GEvent." + event + " @ " + millis());
-} //_CODE_:textfield2:334272:
-
-public void textfield1_change2(GTextField source, GEvent event) { //_CODE_:textfield1:533466:
-  println("textfield1 - GTextField >> GEvent." + event + " @ " + millis());
-} //_CODE_:textfield1:533466:
-
-public void textfield3_change1(GTextField source, GEvent event) { //_CODE_:textfield3:474839:
-  println("textfield3 - GTextField >> GEvent." + event + " @ " + millis());
-} //_CODE_:textfield3:474839:
-
 
 
 // Create all the GUI controls. 
@@ -63,31 +54,18 @@ public void createGUI(){
   window1.noLoop();
   window1.setActionOnClose(G4P.KEEP_OPEN);
   window1.addDrawHandler(this, "win_draw3");
-  carButt = new GButton(window1, 23, 89, 80, 30);
+  carButt = new GButton(window1, 20, 21, 80, 30);
   carButt.setText("Car");
   carButt.addEventHandler(this, "carButtonClicked");
-  hbButt = new GButton(window1, 122, 90, 82, 31);
+  hbButt = new GButton(window1, 125, 20, 82, 31);
   hbButt.setText("Hatchback");
   hbButt.addEventHandler(this, "hbButtClicked");
-  suvButt = new GButton(window1, 23, 131, 80, 30);
+  suvButt = new GButton(window1, 19, 63, 80, 30);
   suvButt.setText("SUV");
   suvButt.addEventHandler(this, "suvButtonClicked");
-  truckButt = new GButton(window1, 123, 132, 80, 30);
+  truckButt = new GButton(window1, 126, 64, 80, 30);
   truckButt.setText("Truck");
   truckButt.addEventHandler(this, "truckButtonClicked");
-  textfield2 = new GTextField(window1, 85, 56, 63, 28, G4P.SCROLLBARS_NONE);
-  textfield2.setText("Car Model");
-  textfield2.setOpaque(false);
-  textfield2.addEventHandler(this, "textfield2_change1");
-  textfield1 = new GTextField(window1, 49, 10, 133, 25, G4P.SCROLLBARS_NONE);
-  textfield1.setText("Welcome to Visualizicar!");
-  textfield1.setLocalColorScheme(GCScheme.GOLD_SCHEME);
-  textfield1.setOpaque(false);
-  textfield1.addEventHandler(this, "textfield1_change2");
-  textfield3 = new GTextField(window1, 85, 190, 36, 24, G4P.SCROLLBARS_NONE);
-  textfield3.setText("Color");
-  textfield3.setOpaque(false);
-  textfield3.addEventHandler(this, "textfield3_change1");
   window1.loop();
 }
 
@@ -98,6 +76,3 @@ GButton carButt;
 GButton hbButt; 
 GButton suvButt; 
 GButton truckButt; 
-GTextField textfield2; 
-GTextField textfield1; 
-GTextField textfield3; 
