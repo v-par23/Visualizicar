@@ -7,17 +7,15 @@ Model Pickup_truck = new Model();
 Model selectedCar = low_poly_car;
 
 void setup() {
-  size(1000, 1000);
+  size(500, 500);
   frameRate(30);
+  createGUI();
   
   parseSTL(low_poly_car, loadBytes("low_poly_car.stl"));
   parseSTL(sti_hb_all, loadBytes("sti_hb_all.stl"));
   parseSTL(suv2, loadBytes("suv2.stl"));
   parseSTL(Pickup_truck, loadBytes("Pickup_truck.stl"));
 
-  //saveBytes("car.stl", stl);
-  
-  createGUI();
 }
 
   
