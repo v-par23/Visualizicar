@@ -63,10 +63,6 @@ public void button5_click1(GButton source, GEvent event) { //_CODE_:button5:3191
   println("button5 - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:button5:319142:
 
-public void button1_click1(GButton source, GEvent event) { //_CODE_:button6:366143:
-  println("button6 - GButton >> GEvent." + event + " @ " + millis());
-} //_CODE_:button6:366143:
-
 
 
 // Create all the GUI controls. 
@@ -85,13 +81,13 @@ public void createGUI(){
   label2.setText("Car Model");
   label2.setOpaque(false);
   llow_poly_car_button = new GButton(this, 10, 80, 70, 30);
-  llow_poly_car_button.setText("low poly car");
+  llow_poly_car_button.setText("Sedan");
   llow_poly_car_button.addEventHandler(this, "llow_poly_car_button_click");
   hatch_button = new GButton(this, 90, 80, 70, 30);
-  hatch_button.setText("hatch");
+  hatch_button.setText("Hatchback");
   hatch_button.addEventHandler(this, "hatch_button_click");
   truck_button = new GButton(this, 90, 120, 70, 30);
-  truck_button.setText("truck");
+  truck_button.setText("Truck");
   truck_button.addEventHandler(this, "truck_button_click");
   SUV_button = new GButton(this, 10, 120, 70, 30);
   SUV_button.setText("SUV");
@@ -134,12 +130,9 @@ public void createGUI(){
   slider5.setNumberFormat(G4P.DECIMAL, 2);
   slider5.setOpaque(false);
   slider5.addEventHandler(this, "slider5_change1");
-  button5 = new GButton(this, 329, 228, 46, 20);
+  button5 = new GButton(this, 346, 225, 67, 24);
   button5.setText("Pause");
   button5.addEventHandler(this, "button5_click1");
-  button6 = new GButton(this, 381, 228, 48, 20);
-  button6.setText("Restart");
-  button6.addEventHandler(this, "button1_click1");
 }
 
 // Variable declarations 
@@ -158,4 +151,3 @@ GSlider2D slider2d1;
 GSlider slider4; 
 GSlider slider5; 
 GButton button5; 
-GButton button6; 
