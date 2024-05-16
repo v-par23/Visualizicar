@@ -14,41 +14,58 @@
  * =========================================================
  */
 
-synchronized public void win_draw3(PApplet appc, GWinData data) { //_CODE_:window1:787593:
-  appc.background(230);
-} //_CODE_:window1:787593:
-
-public void carButtonClicked(GButton source, GEvent event) { //_CODE_:carButt:291113:
+public void llow_poly_car_button_click(GButton source, GEvent event) { //_CODE_:llow_poly_car_button:652122:
   selectedCar = low_poly_car;
-  println("carButt - GButton >> GEvent." + event + " @ " + millis());
-} //_CODE_:carButt:291113:
+  println("button1 - GButton >> GEvent." + event + " @ " + millis());
+} //_CODE_:llow_poly_car_button:652122:
 
-public void hbButtClicked(GButton source, GEvent event) { //_CODE_:hbButt:972748:
-  selectedCar = sti_hb_all;
-  println("hbButt - GButton >> GEvent." + event + " @ " + millis());
-} //_CODE_:hbButt:972748:
+public void hatch_button_click(GButton source, GEvent event) { //_CODE_:hatch_button:221766:
+  selectedCar = hatch;
+  println("button2 - GButton >> GEvent." + event + " @ " + millis());
+} //_CODE_:hatch_button:221766:
 
-public void suvButtonClicked(GButton source, GEvent event) { //_CODE_:suvButt:760531:
-  selectedCar = suv2;
-  println("suvButt - GButton >> GEvent." + event + " @ " + millis());
-} //_CODE_:suvButt:760531:
+public void truck_button_click(GButton source, GEvent event) { //_CODE_:truck_button:875014:
+  selectedCar = pickup_truck;
+  println("button3 - GButton >> GEvent." + event + " @ " + millis());
+} //_CODE_:truck_button:875014:
 
-public void truckButtonClicked(GButton source, GEvent event) { //_CODE_:truckButt:895158:
-  selectedCar = Pickup_truck;
-  println("truckButt - GButton >> GEvent." + event + " @ " + millis());
-} //_CODE_:truckButt:895158:
+public void SUV_button_click(GButton source, GEvent event) { //_CODE_:SUV_button:589195:
+  selectedCar = SUV;
+  println("button4 - GButton >> GEvent." + event + " @ " + millis());
+} //_CODE_:SUV_button:589195:
 
-public void textfield2_change1(GTextField source, GEvent event) { //_CODE_:textfield2:334272:
-  println("textfield1 - GTextField >> GEvent." + event + " @ " + millis());
-} //_CODE_:textfield2:334272:
+public void slider1_change1(GSlider source, GEvent event) { //_CODE_:slider1:503038:
+  println("slider1 - GSlider >> GEvent." + event + " @ " + millis());
+} //_CODE_:slider1:503038:
 
-public void textfield1_change2(GTextField source, GEvent event) { //_CODE_:textfield1:533466:
-  println("textfield1 - GTextField >> GEvent." + event + " @ " + millis());
-} //_CODE_:textfield1:533466:
+public void slider2_change1(GSlider source, GEvent event) { //_CODE_:slider2:856539:
+  println("slider2 - GSlider >> GEvent." + event + " @ " + millis());
+} //_CODE_:slider2:856539:
 
-public void textfield3_change1(GTextField source, GEvent event) { //_CODE_:textfield3:474839:
-  println("textfield3 - GTextField >> GEvent." + event + " @ " + millis());
-} //_CODE_:textfield3:474839:
+public void slider3_change1(GSlider source, GEvent event) { //_CODE_:slider3:200590:
+  println("slider3 - GSlider >> GEvent." + event + " @ " + millis());
+} //_CODE_:slider3:200590:
+
+public void slider2d1_change1(GSlider2D source, GEvent event) { //_CODE_:slider2d1:813612:
+  println("slider2d1 - GSlider2D >> GEvent." + event + " @ " + millis());
+} //_CODE_:slider2d1:813612:
+
+public void slider4_change1(GSlider source, GEvent event) { //_CODE_:slider4:412975:
+  println("slider4 - GSlider >> GEvent." + event + " @ " + millis());
+} //_CODE_:slider4:412975:
+
+public void slider5_change1(GSlider source, GEvent event) { //_CODE_:slider5:707459:
+  println("slider5 - GSlider >> GEvent." + event + " @ " + millis());
+} //_CODE_:slider5:707459:
+
+public void button5_click1(GButton source, GEvent event) { //_CODE_:button5:319142:
+  isRunning = !isRunning;
+  println("button5 - GButton >> GEvent." + event + " @ " + millis());
+} //_CODE_:button5:319142:
+
+public void button1_click1(GButton source, GEvent event) { //_CODE_:button6:366143:
+  println("button6 - GButton >> GEvent." + event + " @ " + millis());
+} //_CODE_:button6:366143:
 
 
 
@@ -59,45 +76,86 @@ public void createGUI(){
   G4P.setGlobalColorScheme(GCScheme.BLUE_SCHEME);
   G4P.setMouseOverEnabled(false);
   surface.setTitle("Sketch Window");
-  window1 = GWindow.getWindow(this, "Window title", 0, 0, 240, 240, JAVA2D);
-  window1.noLoop();
-  window1.setActionOnClose(G4P.KEEP_OPEN);
-  window1.addDrawHandler(this, "win_draw3");
-  carButt = new GButton(window1, 23, 89, 80, 30);
-  carButt.setText("Car");
-  carButt.addEventHandler(this, "carButtonClicked");
-  hbButt = new GButton(window1, 122, 90, 82, 31);
-  hbButt.setText("Hatchback");
-  hbButt.addEventHandler(this, "hbButtClicked");
-  suvButt = new GButton(window1, 23, 131, 80, 30);
-  suvButt.setText("SUV");
-  suvButt.addEventHandler(this, "suvButtonClicked");
-  truckButt = new GButton(window1, 123, 132, 80, 30);
-  truckButt.setText("Truck");
-  truckButt.addEventHandler(this, "truckButtonClicked");
-  textfield2 = new GTextField(window1, 85, 56, 63, 28, G4P.SCROLLBARS_NONE);
-  textfield2.setText("Car Model");
-  textfield2.setOpaque(false);
-  textfield2.addEventHandler(this, "textfield2_change1");
-  textfield1 = new GTextField(window1, 49, 10, 133, 25, G4P.SCROLLBARS_NONE);
-  textfield1.setText("Welcome to Visualizicar!");
-  textfield1.setLocalColorScheme(GCScheme.GOLD_SCHEME);
-  textfield1.setOpaque(false);
-  textfield1.addEventHandler(this, "textfield1_change2");
-  textfield3 = new GTextField(window1, 85, 190, 36, 24, G4P.SCROLLBARS_NONE);
-  textfield3.setText("Color");
-  textfield3.setOpaque(false);
-  textfield3.addEventHandler(this, "textfield3_change1");
-  window1.loop();
+  label1 = new GLabel(this, 10, 10, 150, 20);
+  label1.setTextAlign(GAlign.CENTER, GAlign.MIDDLE);
+  label1.setText("Welcome to Visualizicar");
+  label1.setOpaque(false);
+  label2 = new GLabel(this, 30, 50, 110, 20);
+  label2.setTextAlign(GAlign.CENTER, GAlign.MIDDLE);
+  label2.setText("Car Model");
+  label2.setOpaque(false);
+  llow_poly_car_button = new GButton(this, 10, 80, 70, 30);
+  llow_poly_car_button.setText("low poly car");
+  llow_poly_car_button.addEventHandler(this, "llow_poly_car_button_click");
+  hatch_button = new GButton(this, 90, 80, 70, 30);
+  hatch_button.setText("hatch");
+  hatch_button.addEventHandler(this, "hatch_button_click");
+  truck_button = new GButton(this, 90, 120, 70, 30);
+  truck_button.setText("truck");
+  truck_button.addEventHandler(this, "truck_button_click");
+  SUV_button = new GButton(this, 10, 120, 70, 30);
+  SUV_button.setText("SUV");
+  SUV_button.addEventHandler(this, "SUV_button_click");
+  label3 = new GLabel(this, 40, 160, 90, 20);
+  label3.setTextAlign(GAlign.CENTER, GAlign.MIDDLE);
+  label3.setText("My label");
+  label3.setOpaque(false);
+  slider1 = new GSlider(this, 120, 190, 90, 30, 10.0);
+  slider1.setRotation(PI/2, GControlMode.CORNER);
+  slider1.setLimits(0.5, 0.0, 1.0);
+  slider1.setNumberFormat(G4P.DECIMAL, 2);
+  slider1.setOpaque(false);
+  slider1.addEventHandler(this, "slider1_change1");
+  slider2 = new GSlider(this, 80, 190, 90, 30, 10.0);
+  slider2.setRotation(PI/2, GControlMode.CORNER);
+  slider2.setLimits(0.5, 0.0, 1.0);
+  slider2.setNumberFormat(G4P.DECIMAL, 2);
+  slider2.setOpaque(false);
+  slider2.addEventHandler(this, "slider2_change1");
+  slider3 = new GSlider(this, 40, 190, 90, 30, 10.0);
+  slider3.setRotation(PI/2, GControlMode.CORNER);
+  slider3.setLimits(0.5, 0.0, 1.0);
+  slider3.setNumberFormat(G4P.DECIMAL, 2);
+  slider3.setOpaque(false);
+  slider3.addEventHandler(this, "slider3_change1");
+  slider2d1 = new GSlider2D(this, 330, 30, 100, 100);
+  slider2d1.setLimitsX(0.5, 0.0, 1.0);
+  slider2d1.setLimitsY(0.5, 0.0, 1.0);
+  slider2d1.setNumberFormat(G4P.DECIMAL, 2);
+  slider2d1.setOpaque(true);
+  slider2d1.addEventHandler(this, "slider2d1_change1");
+  slider4 = new GSlider(this, 330, 180, 100, 40, 10.0);
+  slider4.setLimits(0.5, 0.0, 1.0);
+  slider4.setNumberFormat(G4P.DECIMAL, 2);
+  slider4.setOpaque(false);
+  slider4.addEventHandler(this, "slider4_change1");
+  slider5 = new GSlider(this, 330, 140, 100, 40, 10.0);
+  slider5.setLimits(0.5, 0.0, 1.0);
+  slider5.setNumberFormat(G4P.DECIMAL, 2);
+  slider5.setOpaque(false);
+  slider5.addEventHandler(this, "slider5_change1");
+  button5 = new GButton(this, 329, 228, 46, 20);
+  button5.setText("Pause");
+  button5.addEventHandler(this, "button5_click1");
+  button6 = new GButton(this, 381, 228, 48, 20);
+  button6.setText("Restart");
+  button6.addEventHandler(this, "button1_click1");
 }
 
 // Variable declarations 
 // autogenerated do not edit
-GWindow window1;
-GButton carButt; 
-GButton hbButt; 
-GButton suvButt; 
-GButton truckButt; 
-GTextField textfield2; 
-GTextField textfield1; 
-GTextField textfield3; 
+GLabel label1; 
+GLabel label2; 
+GButton llow_poly_car_button; 
+GButton hatch_button; 
+GButton truck_button; 
+GButton SUV_button; 
+GLabel label3; 
+GSlider slider1; 
+GSlider slider2; 
+GSlider slider3; 
+GSlider2D slider2d1; 
+GSlider slider4; 
+GSlider slider5; 
+GButton button5; 
+GButton button6; 

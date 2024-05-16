@@ -1,31 +1,35 @@
 import g4p_controls.*;
 
 Model low_poly_car = new Model();
-Model sti_hb_all = new Model();
-Model suv2 = new Model();
-Model Pickup_truck = new Model();
+Model hatch = new Model();
+Model SUV = new Model();
+Model pickup_truck = new Model();
 Model selectedCar = low_poly_car;
 
+boolean isRunning = false;
+
 void setup() {
-  size(1000, 1000);
+  size(500, 500);
   frameRate(30);
+  createGUI();
   
   parseSTL(low_poly_car, loadBytes("low_poly_car.stl"));
-  parseSTL(sti_hb_all, loadBytes("sti_hb_all.stl"));
-  parseSTL(suv2, loadBytes("suv2.stl"));
-  parseSTL(Pickup_truck, loadBytes("Pickup_truck.stl"));
+  parseSTL(hatch, loadBytes("sti_hb_all.stl"));
+  parseSTL(SUV, loadBytes("suv2.stl"));
+  parseSTL(pickup_truck, loadBytes("Pickup_truck.stl"));
 
-  //saveBytes("car.stl", stl);
-  
-  createGUI();
+
 }
 
   
 
 void draw() {
-  println(frameRate);
-  background(0);
-  noStroke();
-  translate(width/2,height/2);
-  draw3D(selectedCar, frameCount);
+  if (!isRunning){
+    println(frameRate);
+    background(0);
+    noStroke();
+    translate(width/2,height/2);
+    draw3D(selectedCar, frameCount);
+    translate(-width/2,-height/2);
+  }
 }
