@@ -59,8 +59,13 @@ public void slider5_change1(GSlider source, GEvent event) { //_CODE_:slider5:707
 } //_CODE_:slider5:707459:
 
 public void button5_click1(GButton source, GEvent event) { //_CODE_:button5:319142:
+  isRunning = !isRunning;
   println("button5 - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:button5:319142:
+
+public void button1_click1(GButton source, GEvent event) { //_CODE_:button6:366143:
+  println("button6 - GButton >> GEvent." + event + " @ " + millis());
+} //_CODE_:button6:366143:
 
 
 
@@ -129,9 +134,12 @@ public void createGUI(){
   slider5.setNumberFormat(G4P.DECIMAL, 2);
   slider5.setOpaque(false);
   slider5.addEventHandler(this, "slider5_change1");
-  button5 = new GButton(this, 330, 230, 80, 30);
-  button5.setText("Face text");
+  button5 = new GButton(this, 329, 228, 46, 20);
+  button5.setText("Pause");
   button5.addEventHandler(this, "button5_click1");
+  button6 = new GButton(this, 381, 228, 48, 20);
+  button6.setText("Restart");
+  button6.addEventHandler(this, "button1_click1");
 }
 
 // Variable declarations 
@@ -150,3 +158,4 @@ GSlider2D slider2d1;
 GSlider slider4; 
 GSlider slider5; 
 GButton button5; 
+GButton button6; 

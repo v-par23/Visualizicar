@@ -6,6 +6,8 @@ Model SUV = new Model();
 Model pickup_truck = new Model();
 Model selectedCar = low_poly_car;
 
+boolean isRunning = false;
+
 void setup() {
   size(500, 500);
   frameRate(30);
@@ -16,15 +18,18 @@ void setup() {
   parseSTL(SUV, loadBytes("suv2.stl"));
   parseSTL(pickup_truck, loadBytes("Pickup_truck.stl"));
 
+
 }
 
   
 
 void draw() {
-  println(frameRate);
-  background(0);
-  noStroke();
-  translate(width/2,height/2);
-  draw3D(selectedCar, frameCount);
-  translate(-width/2,-height/2);
+  if (!isRunning){
+    println(frameRate);
+    background(0);
+    noStroke();
+    translate(width/2,height/2);
+    draw3D(selectedCar, frameCount);
+    translate(-width/2,-height/2);
+  }
 }
