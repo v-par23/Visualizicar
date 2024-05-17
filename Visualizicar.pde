@@ -9,9 +9,10 @@ Model selectedCar = low_poly_car;
 boolean isRunning = false;
 
 void setup() {
-  size(500, 500);
+  size(700, 700);
   frameRate(30);
   createGUI();
+  
   
   parseSTL(low_poly_car, loadBytes("low_poly_car.stl"));
   parseSTL(hatch, loadBytes("sti_hb_all.stl"));
