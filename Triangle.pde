@@ -7,7 +7,7 @@ class Triangle extends Model {
     this.world.mult(parent, this.local);
     for( int i = 0; i < 3; i++ ) {
       triangle.dist += this.world.cols[i+1][3];
-      float mult = 256/(this.world.cols[i+1][3]+5);
+      float mult = 256/(this.world.cols[i+1][3]+z);
       triangle.screen[0+2*i] = mult*this.world.cols[i+1][1];
       triangle.screen[1+2*i] = mult*this.world.cols[i+1][2];
     }
