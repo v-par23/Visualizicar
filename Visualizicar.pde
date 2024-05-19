@@ -9,7 +9,7 @@ Model selectedCar = low_poly_car;
 boolean isRunning = false;
 
 void setup() {
-  size(500, 500);
+  size(500, 600);
   frameRate(30);
   createGUI();
   
