@@ -15,8 +15,8 @@ void setup() {
   
   parseSTL(low_poly_car, loadBytes("low_poly_car.stl"));
   parseSTL(hatch, loadBytes("sti_hb_all.stl"));
-  parseSTL(SUV, loadBytes("suv2.stl"));
-  parseSTL(pickup_truck, loadBytes("Pickup_truck.stl"));
+  parseSTL(SUV, loadBytes("suv3.stl"));
+  parseSTL(pickup_truck, loadBytes("truck.stl"));
 
 
 }
@@ -27,9 +27,16 @@ void draw() {
   if (!isRunning){
     println(frameRate);
     background(0);
+    textSize(23);
+    text("Welcome to Visualizicar!", 35, 40);
     noStroke();
-    translate(width/2,height/2);
+
+    fill(0, 0, 255);
+    textSize(12);
+    text("Car Model", 55, 75);
+    text("Color", 50, 185);
+    translate(width/2,height/1.5);
     draw3D(selectedCar, frameCount);
-    translate(-width/2,-height/2);
+    translate(-width/2,-height/1.5);
   }
 }
