@@ -94,7 +94,7 @@ public void createGUI(){
   SUV_button.addEventHandler(this, "SUV_button_click");
   label3 = new GLabel(this, 40, 160, 90, 20);
   label3.setTextAlign(GAlign.CENTER, GAlign.MIDDLE);
-  label3.setText("My label");
+  label3.setText("Color");
   label3.setOpaque(false);
   slider1 = new GSlider(this, 120, 190, 90, 30, 10.0);
   slider1.setRotation(PI/2, GControlMode.CORNER);
