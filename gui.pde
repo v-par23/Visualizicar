@@ -115,8 +115,9 @@ public void createGUI(){
   slider4.setOpaque(false);
   slider4.addEventHandler(this, "slider4_change1");
   slider5 = new GSlider(this, 330, 140, 100, 40, 10.0);
-  slider5.setLimits(0.5, 0.0, 1.0);
-  slider5.setNumberFormat(G4P.DECIMAL, 2);
+  slider5.setLimits(5, 0, 10);
+  slider5.setNbrTicks(5);
+  slider5.setNumberFormat(G4P.INTEGER, 0);
   slider5.setOpaque(false);
   slider5.addEventHandler(this, "slider5_change1");
   button5 = new GButton(this, 346, 225, 67, 24);
