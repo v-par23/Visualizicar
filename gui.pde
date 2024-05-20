@@ -16,20 +16,24 @@
 
 public void llow_poly_car_button_click(GButton source, GEvent event) { //_CODE_:llow_poly_car_button:652122:
   selectedCar = low_poly_car;
+  showPopup();
   println("button1 - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:llow_poly_car_button:652122:
 
 public void hatch_button_click(GButton source, GEvent event) { //_CODE_:hatch_button:221766:
+  showPopup();
   selectedCar = hatch;
   println("button2 - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:hatch_button:221766:
 
 public void truck_button_click(GButton source, GEvent event) { //_CODE_:truck_button:875014:
+  showPopup();
   selectedCar = pickup_truck;
   println("button3 - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:truck_button:875014:
 
 public void SUV_button_click(GButton source, GEvent event) { //_CODE_:SUV_button:589195:
+  showPopup();
   selectedCar = SUV;
   println("button4 - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:SUV_button:589195:
