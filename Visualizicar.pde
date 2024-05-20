@@ -7,11 +7,14 @@ Model pickup_truck = new Model();
 Model selectedCar = low_poly_car;
 
 boolean isRunning = false;
+boolean noColour = false;
 int z = 5;
 
 int redValue = 128;
 int greenValue = 128;
 int blueValue = 128;
+
+GWindow popup;
 
 void setup() {
   size(500, 600);
@@ -33,15 +36,42 @@ void draw() {
     println(frameRate);
     background(0);
     textSize(23);
-    text("Welcome to Visualizicar!", 35, 40);
+    text("Welcome to Visualizicar!", 95, 40);
     noStroke();
 
     fill(0, 0, 255);
-    textSize(12);
+    textSize(15);
+    noStroke();
     text("Car Model", 55, 75);
+    text("Zoom & Rotate", 325, 75);
     text("Color", 50, 185);
     translate(width/2,height/1.5);
     draw3D(selectedCar, frameCount);
     translate(-width/2,-height/1.5);
   }
+}
+
+void showPopup() {
+  if (popup == null) {
+    popup = GWindow.getWindow(this, "Popup Window", 100, 100, 400, 200, JAVA2D);
+    popup.addDrawHandler(this, "popupDraw");
+    createPopupControls(popup);
+  }
+  popup.setVisible(true);
+}
+
+void popupDraw(PApplet appc, GWinData data) {
+  appc.background(200);
+  appc.textSize(20);
+  appc.fill(0);
+  appc.text("This is a popup window!", 50, 50);
+}
+
+void createPopupControls(GWindow win) {
+  GButton closeButton = new GButton(win, 150, 100, 100, 30, "Close");
+  closeButton.addEventHandler(this, "closeButton_click");
+}
+
+public void closeButton_click(GButton source, GEvent event) {
+  popup.setVisible(false);
 }
