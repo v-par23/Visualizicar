@@ -35,14 +35,20 @@ public void SUV_button_click(GButton source, GEvent event) { //_CODE_:SUV_button
 } //_CODE_:SUV_button:589195:
 
 public void slider1_change1(GSlider source, GEvent event) { //_CODE_:slider1:503038:
+  blueValue = int(slider3.getValueF() * 255);
+  println("Blue Value: " + blueValue);
   println("slider1 - GSlider >> GEvent." + event + " @ " + millis());
 } //_CODE_:slider1:503038:
 
 public void slider2_change1(GSlider source, GEvent event) { //_CODE_:slider2:856539:
+  greenValue = int(slider2.getValueF() * 255);
+  println("Green Value: " + greenValue);
   println("slider2 - GSlider >> GEvent." + event + " @ " + millis());
 } //_CODE_:slider2:856539:
 
 public void slider3_change1(GSlider source, GEvent event) { //_CODE_:slider3:200590:
+  redValue = int(slider1.getValueF() * 255);
+  println("Red Value: " + redValue);
   println("slider3 - GSlider >> GEvent." + event + " @ " + millis());
 } //_CODE_:slider3:200590:
 
@@ -87,7 +93,7 @@ public void createGUI(){
   SUV_button.addEventHandler(this, "SUV_button_click");
   slider1 = new GSlider(this, 120, 190, 90, 30, 10.0);
   slider1.setRotation(PI/2, GControlMode.CORNER);
-  slider1.setLimits(0.5, 0.0, 1.0);
+  slider1.setLimits(1.0, 0.0, 1.0);
   slider1.setNumberFormat(G4P.DECIMAL, 2);
   slider1.setOpaque(false);
   slider1.addEventHandler(this, "slider1_change1");
@@ -99,7 +105,8 @@ public void createGUI(){
   slider2.addEventHandler(this, "slider2_change1");
   slider3 = new GSlider(this, 40, 190, 90, 30, 10.0);
   slider3.setRotation(PI/2, GControlMode.CORNER);
-  slider3.setLimits(0.5, 0.0, 1.0);
+  slider3.setLimits(1.0, 0.0, 1.0);
+  slider3.setNbrTicks(6);
   slider3.setNumberFormat(G4P.DECIMAL, 2);
   slider3.setOpaque(false);
   slider3.addEventHandler(this, "slider3_change1");

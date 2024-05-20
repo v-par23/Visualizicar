@@ -7,7 +7,11 @@ Model pickup_truck = new Model();
 Model selectedCar = low_poly_car;
 
 boolean isRunning = false;
-float z = 5;
+int z = 5;
+
+int redValue = 128;
+int greenValue = 128;
+int blueValue = 128;
 
 void setup() {
   size(500, 600);
