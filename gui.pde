@@ -34,41 +34,41 @@ public void SUV_button_click(GButton source, GEvent event) { //_CODE_:SUV_button
   println("button4 - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:SUV_button:589195:
 
-public void slider1_change1(GSlider source, GEvent event) { //_CODE_:slider1:503038:
-  blueValue = int(slider3.getValueF() * 255);
+public void bcol_change1(GSlider source, GEvent event) { //_CODE_:bcol:503038:
+  blueValue = int(bcol.getValueF() * 255);
   println("Blue Value: " + blueValue);
   println("slider1 - GSlider >> GEvent." + event + " @ " + millis());
-} //_CODE_:slider1:503038:
+} //_CODE_:bcol:503038:
 
-public void slider2_change1(GSlider source, GEvent event) { //_CODE_:slider2:856539:
-  greenValue = int(slider2.getValueF() * 255);
+public void gcol_change1(GSlider source, GEvent event) { //_CODE_:gcol:856539:
+  greenValue = int(gcol.getValueF() * 255);
   println("Green Value: " + greenValue);
   println("slider2 - GSlider >> GEvent." + event + " @ " + millis());
-} //_CODE_:slider2:856539:
+} //_CODE_:gcol:856539:
 
-public void slider3_change1(GSlider source, GEvent event) { //_CODE_:slider3:200590:
-  redValue = int(slider1.getValueF() * 255);
+public void rcol_change1(GSlider source, GEvent event) { //_CODE_:rcol:200590:
+  redValue = int(rcol.getValueF() * 255);
   println("Red Value: " + redValue);
   println("slider3 - GSlider >> GEvent." + event + " @ " + millis());
-} //_CODE_:slider3:200590:
+} //_CODE_:rcol:200590:
 
-public void slider2d1_change1(GSlider2D source, GEvent event) { //_CODE_:slider2d1:813612:
-  println("slider2d1 - GSlider2D >> GEvent." + event + " @ " + millis());
-} //_CODE_:slider2d1:813612:
-
-public void slider4_change1(GSlider source, GEvent event) { //_CODE_:slider4:412975:
+public void rotate_change1(GSlider source, GEvent event) { //_CODE_:rotat:412975:
   println("slider4 - GSlider >> GEvent." + event + " @ " + millis());
-} //_CODE_:slider4:412975:
+} //_CODE_:rotat:412975:
 
-public void slider5_change1(GSlider source, GEvent event) { //_CODE_:slider5:707459:
-  z = slider5.getValueI();
+public void zoom_change1(GSlider source, GEvent event) { //_CODE_:zoom:707459:
+  z = zoom.getValueI();
   println("slider5 - GSlider >> GEvent." + event + " @ " + millis());
-} //_CODE_:slider5:707459:
+} //_CODE_:zoom:707459:
 
 public void button5_click1(GButton source, GEvent event) { //_CODE_:button5:319142:
   isRunning = !isRunning;
   println("button5 - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:button5:319142:
+
+synchronized public void win_draw1(PApplet appc, GWinData data) { //_CODE_:window1:783150:
+  appc.background(230);
+} //_CODE_:window1:783150:
 
 
 
@@ -79,57 +79,56 @@ public void createGUI(){
   G4P.setGlobalColorScheme(GCScheme.BLUE_SCHEME);
   G4P.setMouseOverEnabled(false);
   surface.setTitle("Sketch Window");
-  llow_poly_car_button = new GButton(this, 10, 80, 70, 30);
+  llow_poly_car_button = new GButton(this, 10, 86, 70, 30);
   llow_poly_car_button.setText("Sedan");
   llow_poly_car_button.addEventHandler(this, "llow_poly_car_button_click");
-  hatch_button = new GButton(this, 90, 80, 70, 30);
+  hatch_button = new GButton(this, 90, 86, 70, 30);
   hatch_button.setText("Hatchback");
   hatch_button.addEventHandler(this, "hatch_button_click");
-  truck_button = new GButton(this, 90, 120, 70, 30);
+  truck_button = new GButton(this, 90, 124, 70, 30);
   truck_button.setText("Truck");
   truck_button.addEventHandler(this, "truck_button_click");
-  SUV_button = new GButton(this, 10, 120, 70, 30);
+  SUV_button = new GButton(this, 10, 125, 70, 30);
   SUV_button.setText("SUV");
   SUV_button.addEventHandler(this, "SUV_button_click");
-  slider1 = new GSlider(this, 120, 190, 90, 30, 10.0);
-  slider1.setRotation(PI/2, GControlMode.CORNER);
-  slider1.setLimits(0.5, 0.0, 1.0);
-  slider1.setNumberFormat(G4P.DECIMAL, 2);
-  slider1.setOpaque(false);
-  slider1.addEventHandler(this, "slider1_change1");
-  slider2 = new GSlider(this, 80, 190, 90, 30, 10.0);
-  slider2.setRotation(PI/2, GControlMode.CORNER);
-  slider2.setLimits(0.5, 0.0, 1.0);
-  slider2.setNumberFormat(G4P.DECIMAL, 2);
-  slider2.setOpaque(false);
-  slider2.addEventHandler(this, "slider2_change1");
-  slider3 = new GSlider(this, 40, 190, 90, 30, 10.0);
-  slider3.setRotation(PI/2, GControlMode.CORNER);
-  slider3.setLimits(0.5, 0.0, 1.0);
-  slider3.setNbrTicks(6);
-  slider3.setNumberFormat(G4P.DECIMAL, 2);
-  slider3.setOpaque(false);
-  slider3.addEventHandler(this, "slider3_change1");
-  slider2d1 = new GSlider2D(this, 330, 30, 100, 100);
-  slider2d1.setLimitsX(0.5, 0.0, 1.0);
-  slider2d1.setLimitsY(0.5, 0.0, 1.0);
-  slider2d1.setNumberFormat(G4P.DECIMAL, 2);
-  slider2d1.setOpaque(true);
-  slider2d1.addEventHandler(this, "slider2d1_change1");
-  slider4 = new GSlider(this, 330, 180, 100, 40, 10.0);
-  slider4.setLimits(0.5, 0.0, 1.0);
-  slider4.setNumberFormat(G4P.DECIMAL, 2);
-  slider4.setOpaque(false);
-  slider4.addEventHandler(this, "slider4_change1");
-  slider5 = new GSlider(this, 330, 140, 100, 40, 10.0);
-  slider5.setLimits(5, 0, 10);
-  slider5.setNbrTicks(5);
-  slider5.setNumberFormat(G4P.INTEGER, 0);
-  slider5.setOpaque(false);
-  slider5.addEventHandler(this, "slider5_change1");
-  button5 = new GButton(this, 346, 225, 67, 24);
+  bcol = new GSlider(this, 120, 190, 90, 30, 10.0);
+  bcol.setRotation(PI/2, GControlMode.CORNER);
+  bcol.setLimits(0.5, 0.0, 1.0);
+  bcol.setNumberFormat(G4P.DECIMAL, 2);
+  bcol.setOpaque(false);
+  bcol.addEventHandler(this, "bcol_change1");
+  gcol = new GSlider(this, 80, 190, 90, 30, 10.0);
+  gcol.setRotation(PI/2, GControlMode.CORNER);
+  gcol.setLimits(0.5, 0.0, 1.0);
+  gcol.setNumberFormat(G4P.DECIMAL, 2);
+  gcol.setOpaque(false);
+  gcol.addEventHandler(this, "slider2_change1");
+  rcol = new GSlider(this, 40, 190, 90, 30, 10.0);
+  rcol.setRotation(PI/2, GControlMode.CORNER);
+  rcol.setLimits(0.5, 0.0, 1.0);
+  rcol.setNbrTicks(6);
+  rcol.setNumberFormat(G4P.DECIMAL, 2);
+  rcol.setOpaque(false);
+  rcol.addEventHandler(this, "slider3_change1");
+  rotat = new GSlider(this, 331, 100, 100, 40, 10.0);
+  rotat.setLimits(0.5, 0.0, 1.0);
+  rotat.setNumberFormat(G4P.DECIMAL, 2);
+  rotat.setOpaque(false);
+  rotat.addEventHandler(this, "rotate_change1");
+  zoom = new GSlider(this, 331, 76, 100, 40, 10.0);
+  zoom.setLimits(5, 0, 10);
+  zoom.setNbrTicks(5);
+  zoom.setNumberFormat(G4P.INTEGER, 0);
+  zoom.setOpaque(false);
+  zoom.addEventHandler(this, "zoom_change1");
+  button5 = new GButton(this, 219, 86, 69, 20);
   button5.setText("Pause");
   button5.addEventHandler(this, "button5_click1");
+  window1 = GWindow.getWindow(this, "Window title", 0, 0, 240, 120, JAVA2D);
+  window1.noLoop();
+  window1.setActionOnClose(G4P.KEEP_OPEN);
+  window1.addDrawHandler(this, "win_draw1");
+  window1.loop();
 }
 
 // Variable declarations 
@@ -138,10 +137,10 @@ GButton llow_poly_car_button;
 GButton hatch_button; 
 GButton truck_button; 
 GButton SUV_button; 
-GSlider slider1; 
-GSlider slider2; 
-GSlider slider3; 
-GSlider2D slider2d1; 
-GSlider slider4; 
-GSlider slider5; 
+GSlider bcol; 
+GSlider gcol; 
+GSlider rcol; 
+GSlider rotat; 
+GSlider zoom; 
 GButton button5; 
+GWindow window1;
