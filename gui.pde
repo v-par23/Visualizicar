@@ -17,30 +17,42 @@
 public void llow_poly_car_button_click(GButton source, GEvent event) { //_CODE_:llow_poly_car_button:652122:
   selectedCar = low_poly_car;
   showPopup("Sedan",
-            "The sedan is a sleek and stylish car, perfect for city driving and long road trips. It combines comfort with efficiency.",
-            "Seats: 5\nFuel Economy: 30 MPG\nEngine: 2.0L Inline-4\nSafety Rating: 5 Stars");
+            "The sedan is a sleek and stylish car, perfect for city driving and long road trips. It combines comfort with efficiency.\n" +
+            "Pricing: $25,000\n" +
+            "Performance: 0-100 km/h in 7 seconds\n" +
+            "Cargo Space: 425 liters",
+            "Seats: 5\nFuel Economy: 12.8 km/l\nEngine: 2.0L Inline-4\nSafety Rating: 5 Stars");
   println("button1 - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:llow_poly_car_button:652122:
 
 public void hatch_button_click(GButton source, GEvent event) { //_CODE_:hatch_button:221766:
   showPopup("Hatchback",
-            "The hatchback offers a compact design with surprising interior space. Ideal for urban environments and tight parking spots.",
-            "Seats: 5\nFuel Economy: 35 MPG\nEngine: 1.6L Inline-4\nSafety Rating: 4 Stars");
+            "The hatchback offers a compact design with surprising interior space. Ideal for urban environments and tight parking spots.\n" +
+            "Pricing: $20,000\n" +
+            "Performance: 0-100 km/h in 8 seconds\n" +
+            "Cargo Space: 708 liters",
+            "Seats: 5\nFuel Economy: 14.9 km/l\nEngine: 1.6L Inline-4\nSafety Rating: 4 Stars");
   selectedCar = hatch;
   println("button2 - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:hatch_button:221766:
 
 public void truck_button_click(GButton source, GEvent event) { //_CODE_:truck_button:875014:
   showPopup("Pickup Truck",
-            "The pickup truck is built for heavy-duty tasks, offering strong towing capacity and a spacious cargo area.",
-            "Seats: 5\nFuel Economy: 20 MPG\nEngine: 5.0L V8\nTowing Capacity: 12,000 lbs\nSafety Rating: 4 Stars");
+            "The pickup truck is built for heavy-duty tasks, offering strong towing capacity and a spacious cargo area.\n" +
+            "Pricing: $35,000\n" +
+            "Performance: 0-100 km/h in 6.5 seconds\n" +
+            "Cargo Space: 1,700 liters",
+            "Seats: 5\nFuel Economy: 8.5 km/l\nEngine: 5.0L V8\nTowing Capacity: 5,443 kg\nSafety Rating: 4 Stars");
   selectedCar = pickup_truck;
   println("button3 - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:truck_button:875014:
 
 public void SUV_button_click(GButton source, GEvent event) { //_CODE_:SUV_button:589195:
   showPopup("SUV",
-            "The SUV provides a robust build and powerful performance, suitable for off-road adventures and family outings.",
+            "The SUV provides a robust build and powerful performance, suitable for off-road adventures and family outings.\n" +
+            "Pricing: $40,000\n" +
+            "Performance: 0-60 mph in 6.8 seconds\n" +
+            "Cargo Space: 80 cu ft",
             "Seats: 7\nFuel Economy: 25 MPG\nEngine: 3.5L V6\nSafety Rating: 5 Stars");
   selectedCar = SUV;
   println("button4 - GButton >> GEvent." + event + " @ " + millis());
