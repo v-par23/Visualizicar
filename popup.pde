@@ -1,6 +1,6 @@
 void showPopup() {
   if (popup == null) {
-    popup = GWindow.getWindow(this, "Popup Window", 100, 100, 400, 200, JAVA2D);
+    popup = GWindow.getWindow(this, "Popup Window", 100, 100, 500, 600, JAVA2D);
     popup.addDrawHandler(this, "popupDraw");
     createPopupControls(popup);
   }
@@ -26,7 +26,7 @@ void popupDraw(PApplet appc, GWinData data) {
 }
 
 void createPopupControls(GWindow win) {
-  GButton closeButton = new GButton(win, 150, 100, 100, 30, "Close");
+  GButton closeButton = new GButton(win, 190, 550, 100, 30, "Close");
   closeButton.addEventHandler(this, "closeButton_click");
 }
 
