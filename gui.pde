@@ -40,13 +40,13 @@ public void bcol_change1(GSlider source, GEvent event) { //_CODE_:bcol:503038:
   println("slider1 - GSlider >> GEvent." + event + " @ " + millis());
 } //_CODE_:bcol:503038:
 
-public void gcol_change1(GSlider source, GEvent event) { //_CODE_:gcol:856539:
+public void slider2_change1(GSlider source, GEvent event) { //_CODE_:gcol:856539:
   greenValue = int(gcol.getValueF() * 255);
   println("Green Value: " + greenValue);
   println("slider2 - GSlider >> GEvent." + event + " @ " + millis());
 } //_CODE_:gcol:856539:
 
-public void rcol_change1(GSlider source, GEvent event) { //_CODE_:rcol:200590:
+public void slider3_change1(GSlider source, GEvent event) { //_CODE_:rcol:200590:
   redValue = int(rcol.getValueF() * 255);
   println("Red Value: " + redValue);
   println("slider3 - GSlider >> GEvent." + event + " @ " + millis());
@@ -61,10 +61,15 @@ public void zoom_change1(GSlider source, GEvent event) { //_CODE_:zoom:707459:
   println("slider5 - GSlider >> GEvent." + event + " @ " + millis());
 } //_CODE_:zoom:707459:
 
-public void button5_click1(GButton source, GEvent event) { //_CODE_:button5:319142:
+public void pause_click1(GButton source, GEvent event) { //_CODE_:pause:319142:
   isRunning = !isRunning;
   println("button5 - GButton >> GEvent." + event + " @ " + millis());
-} //_CODE_:button5:319142:
+} //_CODE_:pause:319142:
+
+public void nocol_click1(GButton source, GEvent event) { //_CODE_:nocol:880228:
+  noColour = true;
+  println("nocol - GButton >> GEvent." + event + " @ " + millis());
+} //_CODE_:nocol:880228:
 
 synchronized public void win_draw1(PApplet appc, GWinData data) { //_CODE_:window1:783150:
   appc.background(230);
@@ -121,9 +126,12 @@ public void createGUI(){
   zoom.setNumberFormat(G4P.INTEGER, 0);
   zoom.setOpaque(false);
   zoom.addEventHandler(this, "zoom_change1");
-  button5 = new GButton(this, 219, 86, 69, 20);
-  button5.setText("Pause");
-  button5.addEventHandler(this, "button5_click1");
+  pause = new GButton(this, 219, 86, 69, 20);
+  pause.setText("Pause");
+  pause.addEventHandler(this, "pause_click1");
+  nocol = new GButton(this, 19, 290, 97, 22);
+  nocol.setText("Original Colour");
+  nocol.addEventHandler(this, "nocol_click1");
   window1 = GWindow.getWindow(this, "Window title", 0, 0, 240, 120, JAVA2D);
   window1.noLoop();
   window1.setActionOnClose(G4P.KEEP_OPEN);
@@ -142,5 +150,6 @@ GSlider gcol;
 GSlider rcol; 
 GSlider rotat; 
 GSlider zoom; 
-GButton button5; 
+GButton pause; 
+GButton nocol; 
 GWindow window1;
