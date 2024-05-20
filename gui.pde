@@ -133,12 +133,12 @@ public void createGUI(){
   rotat.setOpaque(false);
   rotat.addEventHandler(this, "rotate_change1");
   zoom = new GSlider(this, 331, 76, 100, 40, 10.0);
-  zoom.setLimits(5, 0, 10);
-  zoom.setNbrTicks(5);
+  zoom.setLimits(5, 3, 7);
+  zoom.setNbrTicks(4);
   zoom.setNumberFormat(G4P.INTEGER, 0);
   zoom.setOpaque(false);
   zoom.addEventHandler(this, "zoom_change1");
-  pause = new GButton(this, 212, 90, 69, 20);
+  pause = new GButton(this, 209, 90, 79, 30);
   pause.setText("Pause");
   pause.addEventHandler(this, "pause_click1");
   nocol = new GButton(this, 19, 290, 97, 22);

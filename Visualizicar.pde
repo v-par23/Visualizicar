@@ -19,13 +19,13 @@ String popupDescription = "";
 String popupFeatures = "";
 
 void setup() {
-  size(500, 600);
+  size(500, 650);
   frameRate(30);
   createGUI();
   
   parseSTL(low_poly_car, loadBytes("low_poly_car.stl"));
   parseSTL(hatch, loadBytes("sti_hb_all.stl"));
-  parseSTL(SUV, loadBytes("suv3.stl"));
+  parseSTL(SUV, loadBytes("suv.stl"));
 }
 
 void draw() {
@@ -43,8 +43,15 @@ void draw() {
     text("Zoom & Rotate", 325, 75);
     text("Color", 50, 185);
     text("Compare Car Models", 225, 185);
-    translate(width/2,height/1.5);
+    if (selectedCar == SUV){
+    translate(width/2,height/1);
     draw3D(selectedCar, frameCount);
-    translate(-width/2,-height/1.5);
+    translate(-width/2,-height/1);
+      }
+    else {
+    translate(width/2,height/1.3);
+    draw3D(selectedCar, frameCount);
+    translate(-width/2,-height/1.3);
+      }
   }
 }
