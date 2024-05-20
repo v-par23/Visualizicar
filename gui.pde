@@ -138,7 +138,7 @@ public void createGUI(){
   zoom.setNumberFormat(G4P.INTEGER, 0);
   zoom.setOpaque(false);
   zoom.addEventHandler(this, "zoom_change1");
-  pause = new GButton(this, 219, 86, 69, 20);
+  pause = new GButton(this, 212, 90, 69, 20);
   pause.setText("Pause");
   pause.addEventHandler(this, "pause_click1");
   nocol = new GButton(this, 19, 290, 97, 22);
