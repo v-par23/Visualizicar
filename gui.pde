@@ -75,10 +75,6 @@ public void nocol_click1(GButton source, GEvent event) { //_CODE_:nocol:880228:
   println("nocol - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:nocol:880228:
 
-synchronized public void win_draw1(PApplet appc, GWinData data) { //_CODE_:window1:783150:
-  appc.background(230);
-} //_CODE_:window1:783150:
-
 
 
 // Create all the GUI controls. 
@@ -136,11 +132,6 @@ public void createGUI(){
   nocol = new GButton(this, 19, 290, 97, 22);
   nocol.setText("Original Colour");
   nocol.addEventHandler(this, "nocol_click1");
-  window1 = GWindow.getWindow(this, "Window title", 0, 0, 240, 120, JAVA2D);
-  window1.noLoop();
-  window1.setActionOnClose(G4P.CLOSE_WINDOW);
-  window1.addDrawHandler(this, "win_draw1");
-  window1.loop();
 }
 
 // Variable declarations 
@@ -156,4 +147,3 @@ GSlider rotat;
 GSlider zoom; 
 GButton pause; 
 GButton nocol; 
-GWindow window1;
