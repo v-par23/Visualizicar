@@ -15,6 +15,9 @@ int greenValue = 128;
 int blueValue = 128;
 
 GWindow popup;
+String popupTitle = "";
+String popupDescription = "";
+String popupFeatures = "";
 
 void setup() {
   size(500, 600);

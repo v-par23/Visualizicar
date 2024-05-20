@@ -16,24 +16,32 @@
 
 public void llow_poly_car_button_click(GButton source, GEvent event) { //_CODE_:llow_poly_car_button:652122:
   selectedCar = low_poly_car;
-  showPopup();
+  showPopup("Sedan",
+            "The sedan is a sleek and stylish car, perfect for city driving and long road trips. It combines comfort with efficiency.",
+            "Seats: 5\nFuel Economy: 30 MPG\nEngine: 2.0L Inline-4\nSafety Rating: 5 Stars");
   println("button1 - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:llow_poly_car_button:652122:
 
 public void hatch_button_click(GButton source, GEvent event) { //_CODE_:hatch_button:221766:
-  showPopup();
+  showPopup("Hatchback",
+            "The hatchback offers a compact design with surprising interior space. Ideal for urban environments and tight parking spots.",
+            "Seats: 5\nFuel Economy: 35 MPG\nEngine: 1.6L Inline-4\nSafety Rating: 4 Stars");
   selectedCar = hatch;
   println("button2 - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:hatch_button:221766:
 
 public void truck_button_click(GButton source, GEvent event) { //_CODE_:truck_button:875014:
-  showPopup();
+  showPopup("Pickup Truck",
+            "The pickup truck is built for heavy-duty tasks, offering strong towing capacity and a spacious cargo area.",
+            "Seats: 5\nFuel Economy: 20 MPG\nEngine: 5.0L V8\nTowing Capacity: 12,000 lbs\nSafety Rating: 4 Stars");
   selectedCar = pickup_truck;
   println("button3 - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:truck_button:875014:
 
 public void SUV_button_click(GButton source, GEvent event) { //_CODE_:SUV_button:589195:
-  showPopup();
+  showPopup("SUV",
+            "The SUV provides a robust build and powerful performance, suitable for off-road adventures and family outings.",
+            "Seats: 7\nFuel Economy: 25 MPG\nEngine: 3.5L V6\nSafety Rating: 5 Stars");
   selectedCar = SUV;
   println("button4 - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:SUV_button:589195:
