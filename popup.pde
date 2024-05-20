@@ -11,7 +11,18 @@ void popupDraw(PApplet appc, GWinData data) {
   appc.background(200);
   appc.textSize(20);
   appc.fill(0);
-  appc.text("This is a popup window!", 50, 50);
+  if (selectedCar == low_poly_car){
+    appc.text("Sedan Model!", 50, 50);
+  }
+  else if (selectedCar == hatch){
+    appc.text("Hatchback Model!", 50, 50);
+  }
+  else if (selectedCar == SUV){
+    appc.text("SUV Model!", 50, 50);
+  }
+  else if (selectedCar == pickup_truck){
+    appc.text("Truck Model!", 50, 50);
+  }
 }
 
 void createPopupControls(GWindow win) {
