@@ -67,7 +67,7 @@ public void pause_click1(GButton source, GEvent event) { //_CODE_:pause:319142:
 } //_CODE_:pause:319142:
 
 public void nocol_click1(GButton source, GEvent event) { //_CODE_:nocol:880228:
-  noColour = true;
+  noColour = !noColour;
   println("nocol - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:nocol:880228:
 
@@ -134,7 +134,7 @@ public void createGUI(){
   nocol.addEventHandler(this, "nocol_click1");
   window1 = GWindow.getWindow(this, "Window title", 0, 0, 240, 120, JAVA2D);
   window1.noLoop();
-  window1.setActionOnClose(G4P.KEEP_OPEN);
+  window1.setActionOnClose(G4P.CLOSE_WINDOW);
   window1.addDrawHandler(this, "win_draw1");
   window1.loop();
 }

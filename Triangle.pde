@@ -18,7 +18,11 @@ class Triangle extends Model {
       + triangle.screen[4] * (triangle.screen[1] - triangle.screen[3])
       < 0;
     triangles.add(triangle);
-    //triangle.col = color(int(256 * this.local.cols[0][3]));
-    triangle.col = color(redValue, greenValue, blueValue);
+    if (noColour){
+      triangle.col = color(int(256 * this.local.cols[0][3]));
+      }
+    else{
+      triangle.col = color(redValue, greenValue, blueValue);
+    }
   };
 }
