@@ -3,7 +3,6 @@ import g4p_controls.*;
 Model low_poly_car = new Model();
 Model hatch = new Model();
 Model SUV = new Model();
-Model pickup_truck = new Model();
 Model selectedCar = low_poly_car;
 
 boolean isRunning = false;
@@ -27,7 +26,6 @@ void setup() {
   parseSTL(low_poly_car, loadBytes("low_poly_car.stl"));
   parseSTL(hatch, loadBytes("sti_hb_all.stl"));
   parseSTL(SUV, loadBytes("suv3.stl"));
-  parseSTL(pickup_truck, loadBytes("truck.stl"));
 }
 
 void draw() {
@@ -44,6 +42,7 @@ void draw() {
     text("Car Model", 55, 75);
     text("Zoom & Rotate", 325, 75);
     text("Color", 50, 185);
+    text("Compare Car Models", 225, 185);
     translate(width/2,height/1.5);
     draw3D(selectedCar, frameCount);
     translate(-width/2,-height/1.5);
