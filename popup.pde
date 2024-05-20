@@ -16,9 +16,9 @@ void popupDraw(PApplet appc, GWinData data) {
   appc.fill(0);
   appc.text("Model: " + popupTitle, 10, 30);
   appc.text("Description:", 10, 60);
-  appc.text(popupDescription, 10, 70, 380, 100); // Description text box
-  appc.text("Features:", 10, 180);
-  appc.text(popupFeatures, 10, 190, 380, 150); // Features text box
+  appc.text(popupDescription, 10, 70, 380, 120); // Description text box
+  appc.text("Features:", 10, 200);
+  appc.text(popupFeatures, 10, 210, 380, 150); // Features text box
 }
 
 void createPopupControls(GWindow win) {
