@@ -18,7 +18,7 @@ public void llow_poly_car_button_click(GButton source, GEvent event) { //_CODE_:
   selectedCar = low_poly_car;
   showPopup("Sedan",
             "The sedan is a sleek and stylish car, perfect for city driving and long road trips. It combines comfort with efficiency.\n" +
-            "Pricing: $25,000",
+            "Pricing: $32,000",
             "Seats: 5\nFuel Economy: 8.5 km/l\nEngine: 2.0L Inline-4\nPerformance: 0-100 km/h in 7 seconds\nCargo Space: 15 cu ft\nSafety Rating: 4 Stars");
   println("button1 - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:llow_poly_car_button:652122:
@@ -26,7 +26,7 @@ public void llow_poly_car_button_click(GButton source, GEvent event) { //_CODE_:
 public void hatch_button_click(GButton source, GEvent event) { //_CODE_:hatch_button:221766:
   showPopup("Hatchback",
             "The hatchback offers a compact design with surprising interior space. Ideal for urban environments and tight parking spots.\n" +
-            "Pricing: $20,000\n",
+            "Pricing: $40,000\n",
             "Seats: 5\nFuel Economy: 9.3 km/l\nEngine: 1.6L Inline-4\nPerformance: 0-100 km/h in 7.8 seconds\nCargo Space: 25 cu ft\nSafety Rating: 4.5 Stars");
   selectedCar = hatch;
   println("button2 - GButton >> GEvent." + event + " @ " + millis());
@@ -35,7 +35,7 @@ public void hatch_button_click(GButton source, GEvent event) { //_CODE_:hatch_bu
 public void truck_button_click(GButton source, GEvent event) { //_CODE_:truck_button:875014:
   showPopup("Pickup Truck",
             "The pickup truck is built for heavy-duty tasks, offering strong towing capacity and a spacious cargo area.\n" +
-            "Pricing: $35,000\n",
+            "Pricing: $70,000\n",
             "Seats: 5\nFuel Economy: 11.2 km/l\nEngine: 5.0L Inline-4\nPerformance: 0-100 km/h in 8.5 seconds\nCargo Space: 60 cu ft\nSafety Rating: 4.5 Stars");
   selectedCar = pickup_truck;
   println("button3 - GButton >> GEvent." + event + " @ " + millis());
@@ -44,7 +44,7 @@ public void truck_button_click(GButton source, GEvent event) { //_CODE_:truck_bu
 public void SUV_button_click(GButton source, GEvent event) { //_CODE_:SUV_button:589195:
   showPopup("SUV",
             "The SUV provides a robust build and powerful performance, suitable for off-road adventures and family outings.\n" +
-            "Pricing: $40,000\n",
+            "Pricing: $60,000\n",
             "Seats: 7\nFuel Economy: 10.1 km/l\nEngine: 3.5L Inline-4\nPerformance: 0-100 km/h in 8 seconds\nCargo Space: 80 cu ft\nSafety Rating: 5 Stars");
   selectedCar = SUV;
   println("button4 - GButton >> GEvent." + event + " @ " + millis());
