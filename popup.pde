@@ -11,10 +11,10 @@ void showPopup(String title, String description, String features) {
 }
 
 void showComparisonPopup(String title, String comparison) {
-  if (popup2 == null) {
-    popup2 = GWindow.getWindow(this, "Popup2 Window", 100, 100, 650, 475, JAVA2D);
-    popup2.addDrawHandler(this, "comparisionPopupDraw");
-    createPopupControls(popup2);
+  if (popup == null) {
+    popup = GWindow.getWindow(this, "Popup2 Window", 100, 100, 650, 475, JAVA2D);
+    popup.addDrawHandler(this, "comparisionPopupDraw");
+    createPopupControls(popup);
   }
   popupTitle = title;
   //popupDescription = "";
@@ -43,7 +43,7 @@ void popupDraw(PApplet appc, GWinData data) {
 }
 
 void createPopupControls(GWindow win) {
-  GButton closeButton = new GButton(win, 190, 550, 100, 30, "Close");
+  GButton closeButton = new GButton(win, 190, 450, 100, 30, "Close");
   closeButton.addEventHandler(this, "closeButton_click");
 }
 
