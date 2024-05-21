@@ -14,7 +14,7 @@ void showComparisonPopup(String title, String comparison) {
   if (popup2 == null) {
     popup2 = GWindow.getWindow(this, "Popup2 Window", 100, 100, 500, 475, JAVA2D);
     popup2.addDrawHandler(this, "comparisionPopupDraw");
-    createPopupControls(popup2);
+    createComparisionPopupControls(popup2);
   }
   popupTitle = title;
   //popupDescription = "";
@@ -47,7 +47,15 @@ void createPopupControls(GWindow win) {
   closeButton.addEventHandler(this, "closeButton_click");
 }
 
+void createComparisionPopupControls(GWindow win) {
+  GButton closeButton2 = new GButton(win, 190, 410, 100, 30, "Close");
+  closeButton2.addEventHandler(this, "closeButton2_click");
+}
+
 public void closeButton_click(GButton source, GEvent event) {
   popup.setVisible(false);
-  popup2.setVisible(false);
+}
+
+public void closeButton2_click(GButton source, GEvent event) {
+  popup2.setVisible(false); 
 }
