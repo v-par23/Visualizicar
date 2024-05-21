@@ -1,6 +1,6 @@
 void showPopup(String title, String description, String features) {
   if (popup == null) {
-    popup = GWindow.getWindow(this, "Popup Window", 100, 100, 650, 475, JAVA2D);
+    popup = GWindow.getWindow(this, "Popup Window", 100, 100, 500, 475, JAVA2D);
     popup.addDrawHandler(this, "popupDraw");
     createPopupControls(popup);
   }
@@ -11,15 +11,15 @@ void showPopup(String title, String description, String features) {
 }
 
 void showComparisonPopup(String title, String comparison) {
-  if (popup == null) {
-    popup = GWindow.getWindow(this, "Popup2 Window", 100, 100, 650, 475, JAVA2D);
-    popup.addDrawHandler(this, "comparisionPopupDraw");
-    createPopupControls(popup);
+  if (popup2 == null) {
+    popup2 = GWindow.getWindow(this, "Popup2 Window", 100, 100, 500, 475, JAVA2D);
+    popup2.addDrawHandler(this, "comparisionPopupDraw");
+    createPopupControls(popup2);
   }
   popupTitle = title;
   //popupDescription = "";
   popupFeatures = comparison;
-  popup.setVisible(true);
+  popup2.setVisible(true);
 }
   
 void comparisionPopupDraw(PApplet appc, GWinData data) {
@@ -43,10 +43,11 @@ void popupDraw(PApplet appc, GWinData data) {
 }
 
 void createPopupControls(GWindow win) {
-  GButton closeButton = new GButton(win, 190, 450, 100, 30, "Close");
+  GButton closeButton = new GButton(win, 190, 410, 100, 30, "Close");
   closeButton.addEventHandler(this, "closeButton_click");
 }
 
 public void closeButton_click(GButton source, GEvent event) {
   popup.setVisible(false);
+  popup2.setVisible(false);
 }
