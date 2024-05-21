@@ -24,20 +24,20 @@ public void llow_poly_car_button_click(GButton source, GEvent event) { //_CODE_:
 } //_CODE_:llow_poly_car_button:652122:
 
 public void hatch_button_click(GButton source, GEvent event) { //_CODE_:hatch_button:221766:
+  selectedCar = hatch;
   showPopup("Hatchback",
             "The hatchback offers a compact design with surprising interior space. Ideal for urban environments and tight parking spots.\n" +
             "Pricing: $40,000\n",
             "Seats: 5\nFuel Economy: 9.3 km/l\nEngine: 1.6L Inline-4\nPerformance: 0-100 km/h in 7.8 seconds\nCargo Space: 25 cu ft\nSafety Rating: 4.5 Stars");
-  selectedCar = hatch;
   println("button2 - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:hatch_button:221766:
 
 public void SUV_button_click(GButton source, GEvent event) { //_CODE_:SUV_button:589195:
+  selectedCar = SUV;
   showPopup("SUV",
             "The SUV provides a robust build and powerful performance, suitable for off-road adventures and family outings.\n" +
             "Pricing: $60,000\n",
             "Seats: 7\nFuel Economy: 10.1 km/l\nEngine: 3.5L Inline-4\nPerformance: 0-100 km/h in 8 seconds\nCargo Space: 80 cu ft\nSafety Rating: 5 Stars");
-  selectedCar = SUV;
   println("button4 - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:SUV_button:589195:
 
@@ -60,11 +60,12 @@ public void slider3_change1(GSlider source, GEvent event) { //_CODE_:rcol:200590
 } //_CODE_:rcol:200590:
 
 public void rotate_change1(GSlider source, GEvent event) { //_CODE_:rotat:412975:
+  rotate = rotat.getValueF();
   println("slider4 - GSlider >> GEvent." + event + " @ " + millis());
 } //_CODE_:rotat:412975:
 
 public void zoom_change1(GSlider source, GEvent event) { //_CODE_:zoom:707459:
-  z = zoom.getValueI();
+  z = zoom.getValueF();
   println("slider5 - GSlider >> GEvent." + event + " @ " + millis());
 } //_CODE_:zoom:707459:
 
@@ -146,7 +147,7 @@ public void createGUI(){
   rcol.setOpaque(false);
   rcol.addEventHandler(this, "slider3_change1");
   rotat = new GSlider(this, 331, 100, 100, 40, 10.0);
-  rotat.setLimits(0.5, 0.0, 1.0);
+  rotat.setLimits(0.0, -1.0, 1.0);
   rotat.setNumberFormat(G4P.DECIMAL, 2);
   rotat.setOpaque(false);
   rotat.addEventHandler(this, "rotate_change1");

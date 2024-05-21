@@ -30,7 +30,7 @@ void parseSTL(Model world, byte[] stl) {
   }
 }
 void draw3D(Model world, int frameCount) {
-  Mat m0 = new Mat().rotz(0.01*frameCount);//HALF_PI
+  Mat m0 = new Mat().rotz(0.01*frameCount + rotate * HALF_PI);
   Mat m1 = new Mat().rotx(0.1 * sin(0.02*frameCount)+HALF_PI);
   Mat camMatrix = new Mat().mult(m0, m1);
   Mat viewMatrix = new Mat().inv(camMatrix);

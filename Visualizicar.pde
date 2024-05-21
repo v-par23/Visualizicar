@@ -5,14 +5,16 @@ Model hatch = new Model();
 Model SUV = new Model();
 Model selectedCar = low_poly_car;
 
-boolean isRunning = false;
+boolean isRunning = true;
 boolean noColour = false;
-int z = 5;
+float z = 5;
+float rotate = 0;
 
 int redValue = 128;
 int greenValue = 128;
 int blueValue = 128;
 
+int frame = 0;
 GWindow popup;
 GWindow popup2;
 GWindow popup3;
@@ -32,7 +34,6 @@ void setup() {
 }
 
 void draw() {
-  if (!isRunning){
     println(frameRate);
     background(0);
     textSize(23);
@@ -49,13 +50,15 @@ void draw() {
     text("Feedback", 260, 230);
     if (selectedCar == SUV){
     translate(width/2,height/1);
-    draw3D(selectedCar, frameCount);
+    draw3D(selectedCar, frame);
     translate(-width/2,-height/1);
       }
     else {
     translate(width/2,height/1.3);
-    draw3D(selectedCar, frameCount);
+    draw3D(selectedCar, frame);
     translate(-width/2,-height/1.3);
       }
+  if (isRunning){
+    frame++;
   }
 }
