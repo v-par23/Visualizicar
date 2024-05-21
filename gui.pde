@@ -120,6 +120,14 @@ public void hbvssuv_click1(GButton source, GEvent event) { //_CODE_:hbvssuv:9719
   println("hbvssuv - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:hbvssuv:971991:
 
+public void textfield1_change1(GTextField source, GEvent event) { //_CODE_:textfield1:685775:
+  if (event == GEvent.ENTERED) {
+    String inputText = source.getText();
+    println("Text entered: " + inputText);
+    }
+  println("textfield1 - GTextField >> GEvent." + event + " @ " + millis());
+} //_CODE_:textfield1:685775:
+
 
 
 // Create all the GUI controls. 
@@ -174,15 +182,19 @@ public void createGUI(){
   nocol = new GButton(this, 19, 290, 97, 22);
   nocol.setText("Original Colour");
   nocol.addEventHandler(this, "nocol_click1");
-  sedvshb = new GButton(this, 174, 198, 80, 30);
+  sedvshb = new GButton(this, 173, 168, 80, 30);
   sedvshb.setText("Sedan vs Hatchback");
   sedvshb.addEventHandler(this, "sedvshb_click1");
-  sedvssuv = new GButton(this, 263, 197, 80, 30);
+  sedvssuv = new GButton(this, 263, 168, 80, 30);
   sedvssuv.setText("Sedan vs SUV");
   sedvssuv.addEventHandler(this, "sedvssuv_click1");
-  hbvssuv = new GButton(this, 352, 198, 80, 30);
+  hbvssuv = new GButton(this, 353, 168, 80, 30);
   hbvssuv.setText("SUV vs Hatchback");
   hbvssuv.addEventHandler(this, "hbvssuv_click1");
+  textfield1 = new GTextField(this, 211, 241, 192, 31, G4P.SCROLLBARS_NONE);
+  textfield1.setPromptText("Enter the model you liked the most");
+  textfield1.setOpaque(true);
+  textfield1.addEventHandler(this, "textfield1_change1");
 }
 
 // Variable declarations 
@@ -200,3 +212,4 @@ GButton nocol;
 GButton sedvshb; 
 GButton sedvssuv; 
 GButton hbvssuv; 
+GTextField textfield1; 

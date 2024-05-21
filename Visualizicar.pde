@@ -44,7 +44,8 @@ void draw() {
     text("Car Model", 55, 75);
     text("Zoom & Rotate", 325, 75);
     text("Color", 50, 185);
-    text("Compare Car Models", 225, 185);
+    text("Compare Car Models", 225, 158);
+    text("Feedback", 260, 230);
     if (selectedCar == SUV){
     translate(width/2,height/1);
     draw3D(selectedCar, frameCount);
