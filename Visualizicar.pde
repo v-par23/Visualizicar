@@ -36,7 +36,7 @@ void draw() {
     println(frameRate);
     background(0);
     textSize(23);
-    text("Welcome to Visualizicar!", 95, 40);
+    text("Welcome to Viszuicar!", 95, 40);
     noStroke();
 
     fill(0, 0, 255);
