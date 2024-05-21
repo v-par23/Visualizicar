@@ -79,14 +79,44 @@ public void nocol_click1(GButton source, GEvent event) { //_CODE_:nocol:880228:
 } //_CODE_:nocol:880228:
 
 public void sedvshb_click1(GButton source, GEvent event) { //_CODE_:sedvshb:255627:
+  showComparisonPopup("Sedan vs Hatchback",
+    "Model        | Sedan         | Hatchback\n" +
+    "Seats          | 5             | 5\n" +
+    "Fuel Economy   | 8.5 km/l      | 9.3 km/l\n" +
+    "Engine         | 2.0L Inline-4 | 1.6L Inline-4\n" +
+    "Performance    | 0-100 km/h in 7 s  | 0-100 km/h in 7.8 s\n" +
+    "Cargo Space    | 15 cu ft      | 25 cu ft\n" +
+    "Safety Rating  | 4 Stars       | 4.5 Stars\n" +
+    "Pricing        | $32,000       | $40,000"
+  );
   println("sedvshb - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:sedvshb:255627:
 
 public void sedvssuv_click1(GButton source, GEvent event) { //_CODE_:sedvssuv:231760:
+  showComparisonPopup("Sedan vs SUV",
+    "Model        | Sedan         | SUV\n" +
+    "Seats          | 5             | 7\n" +
+    "Fuel Economy   | 8.5 km/l      | 10.1 km/l\n" +
+    "Engine         | 2.0L Inline-4 | 3.5L Inline-4\n" +
+    "Performance    | 0-100 km/h in 7 s  | 0-100 km/h in 8 s\n" +
+    "Cargo Space    | 15 cu ft      | 80 cu ft\n" +
+    "Safety Rating  | 4 Stars       | 5 Stars\n" +
+    "Pricing        | $32,000       | $60,000"
+  );
   println("sedvssuv - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:sedvssuv:231760:
 
 public void hbvssuv_click1(GButton source, GEvent event) { //_CODE_:hbvssuv:971991:
+  showComparisonPopup("Hatchback vs SUV",
+    "Model        | Hatchback     | SUV\n" +
+    "Seats          | 5             | 7\n" +
+    "Fuel Economy   | 9.3 km/l      | 10.1 km/l\n" +
+    "Engine         | 1.6L Inline-4 | 3.5L Inline-4\n" +
+    "Performance    | 0-100 km/h in 7.8 s | 0-100 km/h in 8 s\n" +
+    "Cargo Space    | 25 cu ft      | 80 cu ft\n" +
+    "Safety Rating  | 4.5 Stars     | 5 Stars\n" +
+    "Pricing        | $40,000       | $60,000"
+  );
   println("hbvssuv - GButton >> GEvent." + event + " @ " + millis());
 } //_CODE_:hbvssuv:971991:
 

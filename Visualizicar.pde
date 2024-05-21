@@ -14,6 +14,8 @@ int greenValue = 128;
 int blueValue = 128;
 
 GWindow popup;
+GWindow popup2;
+
 String popupTitle = "";
 String popupDescription = "";
 String popupFeatures = "";
