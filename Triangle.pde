@@ -7,7 +7,7 @@ class Triangle extends Model {
     this.world.mult(parent, this.local);
     for( int i = 0; i < 3; i++ ) {
       triangle.dist += this.world.cols[i+1][3];
-      float mult = 256/(this.world.cols[i+1][3]+5);
+      float mult = 256/(this.world.cols[i+1][3]+z);
       triangle.screen[0+2*i] = mult*this.world.cols[i+1][1];
       triangle.screen[1+2*i] = mult*this.world.cols[i+1][2];
     }
@@ -18,6 +18,11 @@ class Triangle extends Model {
       + triangle.screen[4] * (triangle.screen[1] - triangle.screen[3])
       < 0;
     triangles.add(triangle);
-    triangle.col = color(int(256 * this.local.cols[0][3]));
+    if (noColour){
+      triangle.col = color(int(256 * this.local.cols[0][3]));
+      }
+    else{
+      triangle.col = color(redValue, greenValue, blueValue);
+    }
   };
 }
