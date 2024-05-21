@@ -103,6 +103,7 @@ public void textfield1_change1(GTextField source, GEvent event) { //_CODE_:textf
   if (event == GEvent.ENTERED) {
     String inputText = source.getText();
     println("Text entered: " + inputText);
+    showFeedbackPopup();
     }
   println("textfield1 - GTextField >> GEvent." + event + " @ " + millis());
 } //_CODE_:textfield1:685775:

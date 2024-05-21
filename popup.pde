@@ -22,6 +22,22 @@ void showComparisonPopup(String title, String comparison) {
   popup2.setVisible(true);
 }
   
+void showFeedbackPopup() {
+  if (popup3 == null) {
+    popup3 = GWindow.getWindow(this, "Popup Window", 100, 100, 160, 200, JAVA2D);
+    popup3.addDrawHandler(this, "feedbackPopupDraw");
+    createFeedbackPopupControls(popup3);
+  }
+  popup.setVisible(true);
+}
+
+void feedbackPopupDraw(PApplet appc, GWinData data) {
+  appc.background(200);
+  appc.textSize(16);
+  appc.fill(0);
+  appc.text("Thank you for\n your feedback", 15, 30);
+}
+
 void comparisionPopupDraw(PApplet appc, GWinData data) {
   appc.background(200);
   appc.textSize(16);
@@ -52,10 +68,20 @@ void createComparisionPopupControls(GWindow win) {
   closeButton2.addEventHandler(this, "closeButton2_click");
 }
 
+
+void createFeedbackPopupControls(GWindow win) {
+  GButton closeButton3 = new GButton(win, 20, 110, 100, 30, "Close");
+  closeButton3.addEventHandler(this, "closeButton3_click");
+}
+
 public void closeButton_click(GButton source, GEvent event) {
   popup.setVisible(false);
 }
 
 public void closeButton2_click(GButton source, GEvent event) {
   popup2.setVisible(false); 
+}
+
+public void closeButton3_click(GButton source, GEvent event) {
+  popup3.setVisible(false); 
 }
