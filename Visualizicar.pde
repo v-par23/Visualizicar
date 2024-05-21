@@ -28,6 +28,7 @@ void setup() {
   frameRate(30);
   createGUI();
   
+  
   parseSTL(low_poly_car, loadBytes("low_poly_car.stl"));
   parseSTL(hatch, loadBytes("sti_hb_all.stl"));
   parseSTL(SUV, loadBytes("suv.stl"));

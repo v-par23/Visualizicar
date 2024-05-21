@@ -193,4 +193,4 @@ GButton nocol;
 GButton sedvshb; 
 GButton sedvssuv; 
 GButton hbvssuv; 
-GTextField textfield1; 
+GTextField textfield1;
