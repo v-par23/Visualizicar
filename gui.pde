@@ -16,6 +16,7 @@
 
 public void llow_poly_car_button_click(GButton source, GEvent event) { //_CODE_:llow_poly_car_button:652122:
   selectedCar = low_poly_car;
+  //shows popup of sedan model description and key features
   showPopup("Sedan",
             "The sedan is a sleek and stylish car, perfect for city driving and long road trips. It combines comfort with efficiency.\n" +
             "Pricing: $32,000",
@@ -24,6 +25,7 @@ public void llow_poly_car_button_click(GButton source, GEvent event) { //_CODE_:
 
 public void hatch_button_click(GButton source, GEvent event) { //_CODE_:hatch_button:221766:
   selectedCar = hatch;
+  //shows popup of hatchback model description and key features
   showPopup("Hatchback",
             "The hatchback offers a compact design with surprising interior space. Ideal for urban environments and tight parking spots.\n" +
             "Pricing: $40,000\n",
@@ -32,6 +34,7 @@ public void hatch_button_click(GButton source, GEvent event) { //_CODE_:hatch_bu
 
 public void SUV_button_click(GButton source, GEvent event) { //_CODE_:SUV_button:589195:
   selectedCar = SUV;
+  //shows popup of SUV model description and key features
   showPopup("SUV",
             "The SUV provides a robust build and powerful performance, suitable for off-road adventures and family outings.\n" +
             "Pricing: $60,000\n",
@@ -39,52 +42,63 @@ public void SUV_button_click(GButton source, GEvent event) { //_CODE_:SUV_button
 } //_CODE_:SUV_button:589195:
 
 public void bcol_change1(GSlider source, GEvent event) { //_CODE_:bcol:503038:
+  //blue value of RGB
   blueValue = int(bcol.getValueF() * 255);
 } //_CODE_:bcol:503038:
 
 public void slider2_change1(GSlider source, GEvent event) { //_CODE_:gcol:856539:
+  //green value of RGB
   greenValue = int(gcol.getValueF() * 255);
 } //_CODE_:gcol:856539:
 
 public void slider3_change1(GSlider source, GEvent event) { //_CODE_:rcol:200590:
+  //red value of RGB
   redValue = int(rcol.getValueF() * 255);
 } //_CODE_:rcol:200590:
 
 public void rotate_change1(GSlider source, GEvent event) { //_CODE_:rotat:412975:
+  //rotate slider for car model
   rotate = rotat.getValueF();
 } //_CODE_:rotat:412975:
 
 public void zoom_change1(GSlider source, GEvent event) { //_CODE_:zoom:707459:
+  //zoom slider for car model
   z = zoom.getValueF();
 } //_CODE_:zoom:707459:
 
 public void pause_click1(GButton source, GEvent event) { //_CODE_:pause:319142:
+  //pause button for car model
   isRunning = !isRunning;
 } //_CODE_:pause:319142:
 
 public void nocol_click1(GButton source, GEvent event) { //_CODE_:nocol:880228:
+  //original colour button for car model
   noColour = !noColour;
 } //_CODE_:nocol:880228:
 
 public void sedvshb_click1(GButton source, GEvent event) { //_CODE_:sedvshb:255627:
+  //shows comparision popup of sedan and hatchback model 
   showComparisonPopup("Sedan vs Hatchback",
     "Model        | Sedan         | Hatchback\nSeats          | 5             | 5\nFuel Economy   | 8.5 km/l      | 9.3 km/l\nEngine         | 2.0L Inline-4 | 1.6L Inline-4\nPerformance    | 0-100 km/h in 7 s  | 0-100 km/h in 7.8 s\nCargo Space    | 15 cu ft      | 25 cu ft\nSafety Rating  | 4 Stars       | 4.5 Stars\nPricing        | $32,000       | $40,000"
   );
 } //_CODE_:sedvshb:255627:
 
 public void sedvssuv_click1(GButton source, GEvent event) { //_CODE_:sedvssuv:231760:
+  //shows comparision popup of SUV and sedan model 
   showComparisonPopup("Sedan vs SUV",
     "Model        | Sedan         | SUV\nSeats          | 5             | 7\nFuel Economy   | 8.5 km/l      | 10.1 km/l\nEngine         | 2.0L Inline-4 | 3.5L Inline-4\nPerformance    | 0-100 km/h in 7 s  | 0-100 km/h in 8 s\nCargo Space    | 15 cu ft      | 80 cu ft\nSafety Rating  | 4 Stars       | 5 Stars\nPricing        | $32,000       | $60,000"
   );
 } //_CODE_:sedvssuv:231760:
 
 public void hbvssuv_click1(GButton source, GEvent event) { //_CODE_:hbvssuv:971991:
+  //shows comparision popup of SUV and hatchback model 
   showComparisonPopup("Hatchback vs SUV",
     "Model        | Hatchback     | SUV\nSeats          | 5             | 7\nFuel Economy   | 9.3 km/l      | 10.1 km/l\nEngine         | 1.6L Inline-4 | 3.5L Inline-4\nPerformance    | 0-100 km/h in 7.8 s | 0-100 km/h in 8 s\nCargo Space    | 25 cu ft      | 80 cu ft\nSafety Rating  | 4.5 Stars     | 5 Stars\nPricing        | $40,000       | $60,000"
   );
 } //_CODE_:hbvssuv:971991:
 
 public void textfield1_change1(GTextField source, GEvent event) { //_CODE_:textfield1:685775:
+  //shows feedback popup when user has entered in the input text
   if (event == GEvent.ENTERED) {
     String inputText = source.getText();
     println("Text entered: " + inputText);

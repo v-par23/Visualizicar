@@ -4,17 +4,20 @@ static class Mat {
     {0, 1, 0, 0}, 
     {0, 0, 1, 0}, 
     {0, 0, 0, 1}
-  };
+  }; //identity matrix
+  
   void printMat(String str) {
     println(str);
     for (int j = 0; j < 4; j++) {// row
       for (int i = 0; i < 4; i++) {// col
+        //prints matrix for debugging
         print("\t");
         print(round(10000 * this.cols[i][j])/10000.0);
       }
       println();
     }
   }
+  //matrix multiplication
   Mat mult(Mat matA, Mat matB) {
     float[][] a = matA.cols;
     float[][] b = matB.cols;
@@ -28,6 +31,7 @@ static class Mat {
     }
     return this;
   }
+  //rotation matrix for x-axis
   Mat rotx(float theta) {
     float c = cos(theta), s = sin(theta);
     this.cols = new float[][]{
@@ -37,6 +41,7 @@ static class Mat {
       {0.0, 0.0, s, c}};
     return this;
   }
+  //rotation matrix for y-axis
   Mat roty(float theta) {
     float c = cos(theta), s = sin(theta);
     this.cols = new float[][]{
@@ -46,6 +51,7 @@ static class Mat {
       {0.0, s, 0.0, c}};
     return this;
   }
+  //rotation matrix for z-axis
   Mat rotz(float theta) {
     float c = cos(theta), s = sin(theta);
     this.cols = new float[][]{
@@ -60,11 +66,12 @@ static class Mat {
     this.cols = new float[4][4];
     for (int i = 0; i < 4; i++) {// col
       for (int j = 0; j < 4; j++) {// row
-        this.cols[i][j] = cols[j][i];
+        this.cols[i][j] = cols[j][i]; //transpose matrix 
       }
     }
     return this;
   }
+  //inverse matrix calculation for orthogonal matrices
   Mat inv(Mat mat) {
     //works if mat = [
     //[1,  x,  y,  z]]
