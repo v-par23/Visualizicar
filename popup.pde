@@ -12,7 +12,7 @@ void showPopup(String title, String description, String features) {
 
 void showComparisonPopup(String title, String comparison) {
   if (popup2 == null) {
-    popup2 = GWindow.getWindow(this, "Popup2 Window", 100, 100, 500, 475, JAVA2D);
+    popup2 = GWindow.getWindow(this, "Popup2 Window", 100, 100, 700, 475, JAVA2D);
     popup2.addDrawHandler(this, "comparisionPopupDraw");
     createComparisionPopupControls(popup2);
   }
