@@ -114,7 +114,7 @@ public void createGUI(){
   G4P.messagesEnabled(false);
   G4P.setGlobalColorScheme(GCScheme.BLUE_SCHEME);
   G4P.setMouseOverEnabled(false);
-  surface.setTitle("Sketch Window");
+  surface.setTitle("Control Window");
   llow_poly_car_button = new GButton(this, 10, 86, 70, 30);
   llow_poly_car_button.setText("Sedan");
   llow_poly_car_button.addEventHandler(this, "llow_poly_car_button_click");
@@ -190,4 +190,4 @@ GButton nocol;
 GButton sedvshb; 
 GButton sedvssuv; 
 GButton hbvssuv; 
-GTextField textfield1;
+GTextField textfield1; 
