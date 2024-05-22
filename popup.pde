@@ -12,6 +12,8 @@ void showPopup(String title, String description, String features) {
   popupFeatures = features;
   //make car model popup window visible
   popup.setVisible(true);
+  popup2.setVisible(false);
+  popup3.setVisible(false);
 }
 
 //show car model comparision popup with title and features
@@ -27,6 +29,8 @@ void showComparisonPopup(String title, String comparison) {
   popupFeatures = comparison;
   //make car model comparision popup window visible
   popup2.setVisible(true);
+  popup.setVisible(false);
+  popup3.setVisible(false);
 }
 
 //show feedback popup
@@ -38,7 +42,9 @@ void showFeedbackPopup() {
     createFeedbackPopupControls(popup3);
   }
   //make feedback popup window visible
-  popup.setVisible(true);
+  popup3.setVisible(true);
+  popup.setVisible(false);
+  popup2.setVisible(false);
 }
 
 //draw handler for the feedback popup window
