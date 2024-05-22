@@ -53,7 +53,7 @@ void draw() {
     noStroke();
     text("Car Model", 55, 75);
     text("Zoom & Rotate", 325, 75);
-    text("Color", 50, 185);
+    text("Colour", 45, 185);
     text("Compare Car Models", 225, 158);
     text("Feedback", 260, 230);
     
